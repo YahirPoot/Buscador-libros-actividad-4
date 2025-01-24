@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Libros</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Barra superior -->
+  <header class="bg-blue-600 text-white shadow-md fixed w-full top-0 z-10">
+    <div class="container mx-auto px-6 py-4 flex items-center gap-4">
+      <h1 class="text-2xl font-bold">Buscador de Libros</h1>
+      <form id="search-form" class="flex flex-1 items-center gap-4">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar libro por título, autor o ISBN..."
+          required
+          class="flex-grow p-3 rounded-md shadow-sm focus:ring-2 focus:ring-white text-black"
+        />
+        <select id="search-type" class="p-3 rounded-md text-black">
+          <option value="q">Título</option>
+          <option value="author">Autor</option>
+          <option value="isbn">ISBN</option>
+        </select>
+        <button
+          type="submit"
+          class="px-6 py-3 bg-white text-blue-600 font-medium rounded-md shadow hover:bg-blue-100">
+          Buscar
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main class="pt-20 px-6">
+    <h2 class="text-xl font-bold text-gray-700 mb-4"></h2>
+    <div id="results" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Resultados se añadirán aquí -->
+    </div>
+
+    <div class="flex justify-between mt-6">
+      <button 
+        id="load-more"
+        class="hidden px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Cargar más
+      </button>
+    </div>
+  </main>
+
+  <script src="/index.js"></script>
+</body>
+</html>
